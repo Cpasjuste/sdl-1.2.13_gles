@@ -1571,10 +1571,6 @@ CheckOpenGLX11()
 	if test x$enable_video = xyes -a x$enable_video_opengl = xyes; then
 		AC_MSG_CHECKING(for OpenGL (GLX) support)
 		video_opengl=no
-		if test x$enable_video = xyes -a x$enable_video_opengl_es = xyes; then
-			video_opengl=no
-			AC_MSG_RESULT($video_opengl)
-		else
 			AC_TRY_COMPILE([
 			 #include <GL/gl.h>
 		 	#include <GL/glx.h>
@@ -1588,7 +1584,6 @@ CheckOpenGLX11()
 				AC_DEFINE(SDL_VIDEO_OPENGL)
 				AC_DEFINE(SDL_VIDEO_OPENGL_GLX)
 			fi
-		fi
 	fi
 }
 

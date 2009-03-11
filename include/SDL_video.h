@@ -125,6 +125,8 @@ typedef struct SDL_Surface {
 #define SDL_FULLSCREEN	0x80000000	/* Surface is a full screen display */
 #define SDL_OPENGL      0x00000002      /* Create an OpenGL rendering context */
 #define SDL_OPENGLBLIT	0x0000000A	/* Create an OpenGL rendering context and use it for blitting */
+#define SDL_OPENGLES     0x00000040   /* Create an OpenGL ES rendering context */
+#define SDL_OPENGLESBLIT 0x00000048   /* Create an OpenGL ES rendering context and use it for blitting */
 #define SDL_RESIZABLE	0x00000010	/* This video mode may be resized */
 #define SDL_NOFRAME	0x00000020	/* No window caption or edge frame */
 /* Used internally (read-only) */
@@ -786,9 +788,26 @@ extern DECLSPEC void SDLCALL SDL_FreeYUVOverlay(SDL_Overlay *overlay);
 extern DECLSPEC int SDLCALL SDL_GL_LoadLibrary(const char *path);
 
 /*
+ * Dynamically load an OpenGL ES driver, if SDL is built with dynamic GL.
+ *
+ * SDL links normally with the OpenGL ES library on your system by default,
+ * but you can compile it to dynamically load the GL driver at runtime.
+ * If you do this, you need to retrieve all of the OpenGL ES functions used in
+ * your program from the dynamic library using SDL_GLES_GetProcAddress().
+ *
+ * This is disabled in default builds of SDL.
+ */
+extern DECLSPEC int SDLCALL SDL_GLES_LoadLibrary(const char *path);
+
+/*
  * Get the address of a GL function
  */
 extern DECLSPEC void * SDLCALL SDL_GL_GetProcAddress(const char* proc);
+
+/*
+ * Get the address of an OpenGL ES function (for extension functions)
+ */
+extern DECLSPEC void * SDLCALL SDL_GLES_GetProcAddress(const char* proc);
 
 /*
  * Set an attribute of the OpenGL subsystem before intialization.

@@ -1560,24 +1560,50 @@ AC_ARG_ENABLE(video-opengl,
 AC_HELP_STRING([--enable-video-opengl], [include OpenGL context creation [[default=yes]]]),
               , enable_video_opengl=yes)
 
+dnl Check to see if OpenGL ES support is desired
+AC_ARG_ENABLE(video-opengl-es,
+[  --enable-video-opengl-es   include OpenGL ES context creation [default=yes]],
+              , enable_video_opengl_es=yes)
+
 dnl Find OpenGL
 CheckOpenGLX11()
 {
-    if test x$enable_video = xyes -a x$enable_video_opengl = xyes; then
-        AC_MSG_CHECKING(for OpenGL (GLX) support)
-        video_opengl=no
-        AC_TRY_COMPILE([
-         #include <GL/gl.h>
-         #include <GL/glx.h>
-         #include <GL/glu.h>
-        ],[
-        ],[
-        video_opengl=yes
-        ])
-        AC_MSG_RESULT($video_opengl)
-        if test x$video_opengl = xyes; then
-            AC_DEFINE(SDL_VIDEO_OPENGL)
-            AC_DEFINE(SDL_VIDEO_OPENGL_GLX)
+	if test x$enable_video = xyes -a x$enable_video_opengl = xyes; then
+		AC_MSG_CHECKING(for OpenGL (GLX) support)
+		video_opengl=no
+		if test x$enable_video = xyes -a x$enable_video_opengl_es = xyes; then
+			video_opengl=no
+			AC_MSG_RESULT($video_opengl)
+		else
+			AC_TRY_COMPILE([
+			 #include <GL/gl.h>
+		 	#include <GL/glx.h>
+			 #include <GL/glu.h>
+			],[
+			],[
+			video_opengl=yes
+			])
+			AC_MSG_RESULT($video_opengl)
+			if test x$video_opengl = xyes; then
+				AC_DEFINE(SDL_VIDEO_OPENGL)
+				AC_DEFINE(SDL_VIDEO_OPENGL_GLX)
+			fi
+		fi
+	fi
+}
+
+dnl Find OpenGL ES
+CheckOpenGLES()
+{
+    if test x$enable_video = xyes -a x$enable_video_opengl_es = xyes; then
+        AC_MSG_CHECKING(for OpenGL ES (EGL) support)
+        video_opengl_es=yes
+	AC_DEFINE(SDL_VIDEO_OPENGL_ES)
+        AC_MSG_RESULT($video_opengl_es)
+        if test x$video_opengl_es = xyes; then
+            if test x$use_dlopen != xyes; then
+                AC_CHECK_LIB(dl, dlopen, SYSTEM_LIBS="$SYSTEM_LIBS -ldl")
+            fi
         fi
     fi
 }
@@ -2265,6 +2291,7 @@ case "$host" in
         CheckQtopia
         CheckPicoGUI
         CheckOpenGLX11
+	CheckOpenGLES
         CheckInputEvents
         CheckTslib
         CheckUSBHID

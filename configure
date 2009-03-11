@@ -1563,6 +1563,7 @@ Optional Features:
   --enable-video-gem      use Atari Gem video driver [default=yes]
   --enable-video-dummy    use dummy video driver [default=yes]
   --enable-video-opengl   include OpenGL context creation [default=yes]
+  --enable-video-opengl-es   include OpenGL ES context creation default=yes
   --enable-osmesa-shared  dynamically load OSMesa OpenGL support
                           [default=yes]
   --enable-input-events   use Linux 2.4 unified input interface
@@ -4589,7 +4590,7 @@ ia64-*-hpux*)
   ;;
 *-*-irix6*)
   # Find out which ABI we are using.
-  echo '#line 4592 "configure"' > conftest.$ac_ext
+  echo '#line 4593 "configure"' > conftest.$ac_ext
   if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
   (eval $ac_compile) 2>&5
   ac_status=$?
@@ -7033,11 +7034,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:7036: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:7037: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:7040: \$? = $ac_status" >&5
+   echo "$as_me:7041: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -7301,11 +7302,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:7304: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:7305: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:7308: \$? = $ac_status" >&5
+   echo "$as_me:7309: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -7405,11 +7406,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:7408: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:7409: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:7412: \$? = $ac_status" >&5
+   echo "$as_me:7413: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -9715,7 +9716,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 9718 "configure"
+#line 9719 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -9815,7 +9816,7 @@ else
   lt_dlunknown=0; lt_dlno_uscore=1; lt_dlneed_uscore=2
   lt_status=$lt_dlunknown
   cat > conftest.$ac_ext <<EOF
-#line 9818 "configure"
+#line 9819 "configure"
 #include "confdefs.h"
 
 #if HAVE_DLFCN_H
@@ -12155,11 +12156,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:12158: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:12159: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:12162: \$? = $ac_status" >&5
+   echo "$as_me:12163: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -12259,11 +12260,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:12262: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:12263: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:12266: \$? = $ac_status" >&5
+   echo "$as_me:12267: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -13831,11 +13832,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:13834: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:13835: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:13838: \$? = $ac_status" >&5
+   echo "$as_me:13839: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -13935,11 +13936,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:13938: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:13939: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:13942: \$? = $ac_status" >&5
+   echo "$as_me:13943: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -16139,11 +16140,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:16142: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:16143: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:16146: \$? = $ac_status" >&5
+   echo "$as_me:16147: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -16407,11 +16408,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:16410: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:16411: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>conftest.err)
    ac_status=$?
    cat conftest.err >&5
-   echo "$as_me:16414: \$? = $ac_status" >&5
+   echo "$as_me:16415: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s "$ac_outfile"; then
      # The compiler can only warn and ignore the option if not recognized
      # So say no if there are warnings other than the usual output.
@@ -16511,11 +16512,11 @@ else
    -e 's:.*FLAGS}\{0,1\} :&$lt_compiler_flag :; t' \
    -e 's: [^ ]*conftest\.: $lt_compiler_flag&:; t' \
    -e 's:$: $lt_compiler_flag:'`
-   (eval echo "\"\$as_me:16514: $lt_compile\"" >&5)
+   (eval echo "\"\$as_me:16515: $lt_compile\"" >&5)
    (eval "$lt_compile" 2>out/conftest.err)
    ac_status=$?
    cat out/conftest.err >&5
-   echo "$as_me:16518: \$? = $ac_status" >&5
+   echo "$as_me:16519: \$? = $ac_status" >&5
    if (exit $ac_status) && test -s out/conftest2.$ac_objext
    then
      # The compiler can only warn and ignore the option if not recognized
@@ -30242,22 +30243,35 @@ else
 fi
 
 
+# Check whether --enable-video-opengl-es was given.
+if test "${enable_video_opengl_es+set}" = set; then
+  enableval=$enable_video_opengl_es;
+else
+  enable_video_opengl_es=yes
+fi
+
+
 CheckOpenGLX11()
 {
-    if test x$enable_video = xyes -a x$enable_video_opengl = xyes; then
-        { echo "$as_me:$LINENO: checking for OpenGL (GLX) support" >&5
+	if test x$enable_video = xyes -a x$enable_video_opengl = xyes; then
+		{ echo "$as_me:$LINENO: checking for OpenGL (GLX) support" >&5
 echo $ECHO_N "checking for OpenGL (GLX) support... $ECHO_C" >&6; }
-        video_opengl=no
-        cat >conftest.$ac_ext <<_ACEOF
+		video_opengl=no
+		if test x$enable_video = xyes -a x$enable_video_opengl_es = xyes; then
+			video_opengl=no
+			{ echo "$as_me:$LINENO: result: $video_opengl" >&5
+echo "${ECHO_T}$video_opengl" >&6; }
+		else
+			cat >conftest.$ac_ext <<_ACEOF
 /* confdefs.h.  */
 _ACEOF
 cat confdefs.h >>conftest.$ac_ext
 cat >>conftest.$ac_ext <<_ACEOF
 /* end confdefs.h.  */
 
-         #include <GL/gl.h>
-         #include <GL/glx.h>
-         #include <GL/glu.h>
+			 #include <GL/gl.h>
+		 	#include <GL/glx.h>
+			 #include <GL/glu.h>
 
 int
 main ()
@@ -30286,7 +30300,7 @@ eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
 	 test ! -s conftest.err
        } && test -s conftest.$ac_objext; then
 
-        video_opengl=yes
+			video_opengl=yes
 
 else
   echo "$as_me: failed program was:" >&5
@@ -30296,17 +30310,102 @@ sed 's/^/| /' conftest.$ac_ext >&5
 fi
 
 rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
-        { echo "$as_me:$LINENO: result: $video_opengl" >&5
+			{ echo "$as_me:$LINENO: result: $video_opengl" >&5
 echo "${ECHO_T}$video_opengl" >&6; }
-        if test x$video_opengl = xyes; then
-            cat >>confdefs.h <<\_ACEOF
+			if test x$video_opengl = xyes; then
+				cat >>confdefs.h <<\_ACEOF
 #define SDL_VIDEO_OPENGL 1
 _ACEOF
 
-            cat >>confdefs.h <<\_ACEOF
+				cat >>confdefs.h <<\_ACEOF
 #define SDL_VIDEO_OPENGL_GLX 1
 _ACEOF
 
+			fi
+		fi
+	fi
+}
+
+CheckOpenGLES()
+{
+    if test x$enable_video = xyes -a x$enable_video_opengl_es = xyes; then
+        { echo "$as_me:$LINENO: checking for OpenGL ES (EGL) support" >&5
+echo $ECHO_N "checking for OpenGL ES (EGL) support... $ECHO_C" >&6; }
+        video_opengl_es=yes
+	cat >>confdefs.h <<\_ACEOF
+#define SDL_VIDEO_OPENGL_ES 1
+_ACEOF
+
+        { echo "$as_me:$LINENO: result: $video_opengl_es" >&5
+echo "${ECHO_T}$video_opengl_es" >&6; }
+        if test x$video_opengl_es = xyes; then
+            if test x$use_dlopen != xyes; then
+                { echo "$as_me:$LINENO: checking for dlopen in -ldl" >&5
+echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6; }
+if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+  echo $ECHO_N "(cached) $ECHO_C" >&6
+else
+  ac_check_lib_save_LIBS=$LIBS
+LIBS="-ldl  $LIBS"
+cat >conftest.$ac_ext <<_ACEOF
+/* confdefs.h.  */
+_ACEOF
+cat confdefs.h >>conftest.$ac_ext
+cat >>conftest.$ac_ext <<_ACEOF
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char dlopen ();
+int
+main ()
+{
+return dlopen ();
+  ;
+  return 0;
+}
+_ACEOF
+rm -f conftest.$ac_objext conftest$ac_exeext
+if { (ac_try="$ac_link"
+case "(($ac_try" in
+  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
+  *) ac_try_echo=$ac_try;;
+esac
+eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
+  (eval "$ac_link") 2>conftest.er1
+  ac_status=$?
+  grep -v '^ *+' conftest.er1 >conftest.err
+  rm -f conftest.er1
+  cat conftest.err >&5
+  echo "$as_me:$LINENO: \$? = $ac_status" >&5
+  (exit $ac_status); } && {
+	 test -z "$ac_c_werror_flag" ||
+	 test ! -s conftest.err
+       } && test -s conftest$ac_exeext &&
+       $as_test_x conftest$ac_exeext; then
+  ac_cv_lib_dl_dlopen=yes
+else
+  echo "$as_me: failed program was:" >&5
+sed 's/^/| /' conftest.$ac_ext >&5
+
+	ac_cv_lib_dl_dlopen=no
+fi
+
+rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
+      conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS
+fi
+{ echo "$as_me:$LINENO: result: $ac_cv_lib_dl_dlopen" >&5
+echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6; }
+if test $ac_cv_lib_dl_dlopen = yes; then
+  SYSTEM_LIBS="$SYSTEM_LIBS -ldl"
+fi
+
+            fi
         fi
     fi
 }
@@ -33592,6 +33691,7 @@ _ACEOF
         CheckQtopia
         CheckPicoGUI
         CheckOpenGLX11
+	CheckOpenGLES
         CheckInputEvents
         CheckTslib
         CheckUSBHID
